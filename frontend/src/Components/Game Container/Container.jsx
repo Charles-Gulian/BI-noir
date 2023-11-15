@@ -7,6 +7,8 @@ export const Container = () => {
 
         <ActionButtons label="Action1" action='start_game' />
         <ActionButtons label="Action2" action='time' />
+      <ActionButtons label="Action3" action='ask_question' method='POST' body = {{character_id: 1, question: "What's your name?",
+      }} />
 
 
       </div>
