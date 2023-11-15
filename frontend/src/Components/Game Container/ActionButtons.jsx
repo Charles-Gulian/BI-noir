@@ -1,14 +1,19 @@
 import React from 'react'
 
 // Button component
-export const ActionButtons = ({ label, onClick }) => {
+export const ActionButtons = ({ label,action, onClick }) => {
   const handleButtonClick = () => {
     // You can customize the fetch request logic here
-    fetch('/')
-      .then((response) => response.json())
-      .then((data) => {
-        // Handle the data or perform additional actions
-        console.log(`Fetch request successful for ${label}`);
+    fetch(`/${action}`)
+        .then((response) =>
+        {
+
+            return  response.json()
+        })
+        .then((data) => {
+            // Handle the data or perform additional actions
+            console.log(data);
+        console.log(`Fetch request successful for ${label}, here is the time ${data.time}`);
       })
       .catch((error) => {
         // Handle errors
