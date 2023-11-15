@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Nav from './Components/Nav/Nav';
-import { Container } from './Components/Nav/Game Container/Container';
+import Nav from './Components/Nav';
+import { Container } from './Components/Game Container/Container';
 
 function App() {
 
