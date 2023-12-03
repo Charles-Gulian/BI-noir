@@ -1,15 +1,19 @@
-version: '3'
+version: '3.9'
 services:
-  backend:
+  server:
     build:
       context: ./api
     ports:
-      - "5000:5000"
-    depends_on:
-      - frontend
-
-  frontend:
-    build:
-      context: ./frontend
+      - "80:5000"
+    volumes:
+      - ./api:/app  # Change this line to point directly to the api directory
+    environment:
+      FLASK_ENV: development
+  web:
+    build: ./frontend
     ports:
       - "3000:3000"
+    volumes:
+      - ./frontend:/user/src/app
+    depends_on:
+      - server

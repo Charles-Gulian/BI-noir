@@ -17,6 +17,12 @@ class Game:
 game_instance = Game()
 
 
+@app.route('/test')
+def test_endpoint() -> str:
+    print('testing in progress')
+    return 'Hello, World'
+
+
 @app.route('/ask_question', methods=['POST'])
 def ask_question():
     try:
